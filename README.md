@@ -1,1 +1,4 @@
-My personal blog, url: [woodyii.com](www.woodyii.com)
+My personal blog
+
+URL: [woodyii.com](woodyii.com)
+
