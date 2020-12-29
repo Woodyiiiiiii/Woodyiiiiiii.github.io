@@ -182,7 +182,7 @@ body {
   background: var(--body-bg-color);
   color: var(--text-color);
   font-family: Noto Serif SC, 'Noto Serif SC', sans-serif;
-  font-size: 0.97em;
+  font-size: 0.95em;
   line-height: 2;
   min-height: 100%;
   position: relative;
