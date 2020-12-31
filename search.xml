@@ -33,10 +33,11 @@
 <h3 id="2-头像"><a href="#2-头像" class="headerlink" title="2. 头像"></a>2. 头像</h3><hr>
 <h3 id="3-链接"><a href="#3-链接" class="headerlink" title="3. 链接"></a>3. 链接</h3><hr>
 <h3 id="4-字体"><a href="#4-字体" class="headerlink" title="4. 字体"></a>4. 字体</h3><hr>
+<p>在配置文件中打开并设置</p>
 <h3 id="5-动态背景"><a href="#5-动态背景" class="headerlink" title="5. 动态背景"></a>5. 动态背景</h3><hr>
 <p>配置文件中打开</p>
 <h3 id="6-评论"><a href="#6-评论" class="headerlink" title="6. 评论"></a>6. 评论</h3><hr>
-<p>Gitalk设置</p>
+<p>Gitalk设置，并且在GitHub中写自己配置的域名。</p>
 ]]></content>
       <categories>
         <category>others</category>
