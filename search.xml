@@ -1,48 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>关于搭建我的博客</title>
-    <url>/2020/12/29/blogConfig/</url>
-    <content><![CDATA[<h1 id="关于搭建我的博客的经历"><a href="#关于搭建我的博客的经历" class="headerlink" title="关于搭建我的博客的经历"></a>关于搭建我的博客的经历</h1><p>最近闲来无事，并且刚好看到别人精美的博客，我就想着是时候重新搭建一个博客了。其实我之前已经有过一个同样用GitHub Pages配合Hexo搭建的博客，但因为我感觉不是很美观，再加上域名问题和换了个新电脑，所以又抛弃了。这次重新搭建博客也想着是时候重新开始我的新的编程经历，努力多<del>水</del>写技术文章，记录我的生活。</p>
-<span id="more"></span>
+    <title>博客迁移到Macbook</title>
+    <url>/2021/12/11/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0Macbook/</url>
+    <content><![CDATA[<h1 id="迁移博客步骤记录"><a href="#迁移博客步骤记录" class="headerlink" title="迁移博客步骤记录"></a>迁移博客步骤记录</h1><span id="more"></span>
+
+<p>time: 2021-12-11</p>
+<p>source computer: Windows ThinkPad</p>
+<p>target computer: Macbook pro 16</p>
+<p>​    此文记录我将博客文件迁移到新的MacBook上的步骤。</p>
+<h2 id="一、在Mac上安装git、node-js、hexo"><a href="#一、在Mac上安装git、node-js、hexo" class="headerlink" title="一、在Mac上安装git、node.js、hexo"></a>一、在Mac上安装git、node.js、hexo</h2><p>​    下载node: 去<a href="https://nodejs.org/en/]">node.js官网</a>,Current版本为最新版本，LTS为稳定版本</p>
+<p>​    下载hexo: <code>npm i -g hexo</code></p>
+<p>​    最后验证: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">node -v</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 
 
 
-<p>一开始我想用Jekyll+Github Pages的方式来搭建，但在这过程中我踩了很多坑，所以放弃了这种方法，重新回到以前搭建博客的方式，就是Hexo(next主题)+Github Pages的方式。</p>
-<h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><hr>
-<p>既然使用Hexo和Github Pages的方式，那么就需要安装npm，Node.js和hexo了，安装这几者的过程不赘述了，最后可以检测下环境：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm -v        // 我的是6.14.9版本</span><br><span class="line">node -v       // 我的是v14.15.3版本</span><br></pre></td></tr></table></figure>
-
-<p>接着是在Github上申请Github Pages，过程简单，只要创建一个新仓库，名字为“用户名.github.io”，就自动生成成功了，访问URL：用户名.github.io。如果对URL不满意，还可以设置域名，我是在阿里云上购买了新的域名，然后在阿里云控制台设置两个域名的绑定，然后在这个Github仓库的设置里的域名处添加新的域名，这样在Github仓库会生成一个CNAME文件，如果想在本地仓库也设置CNAME文件，在主题里创建一个一样的CNAME文件就行了。</p>
-<p>next主题我没有使用官方的，因为我使用官方的主题会出现乱码的情况，所以我使用了别人优化过的next，具体网址是：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></p>
-<h2 id="二、搭建结构"><a href="#二、搭建结构" class="headerlink" title="二、搭建结构"></a>二、搭建结构</h2><hr>
-<p>在themes文件夹下可以新建一个next文件夹，然后使用git clone命令来下载next主题：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<p>注意有两个重要的配置文件，一个是在blog根目录下的<strong>站点配置文件</strong>_config.yml，一个是next文件夹下**主题配置文件 ** _config.yml，改动这两个文件的设置就可以改动博客。</p>
-<p>现在在根目录下的cmd命令行，输入命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<p>没有问题的话就可以在localhost:4000查看使用next主题的博客了。</p>
-<p>接下来我们要添加博客的目录，比如归档archives，目录categories，标签tag和关于about等。在主题配置文件中的menu下一一打开，调整顺序，然后在cmd命令行中这样配置，以目录为例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-
-<p>然后会在source下生成对应文件夹和md文件，在md文件中设置type：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="二、迁移重要文件"><a href="#二、迁移重要文件" class="headerlink" title="二、迁移重要文件"></a>二、迁移重要文件</h2><p>​    去原来电脑配置好的hexo目录copy到新电脑的博客目录下，一下为重要目录:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="三、优化"><a href="#三、优化" class="headerlink" title="三、优化"></a>三、优化</h2><hr>
-<p>关于博客的优化就有很多参考了，下面我就做一些主要优化的说明。</p>
-<h3 id="1-站点logo"><a href="#1-站点logo" class="headerlink" title="1. 站点logo"></a>1. 站点logo</h3><hr>
-<h3 id="2-头像"><a href="#2-头像" class="headerlink" title="2. 头像"></a>2. 头像</h3><hr>
-<h3 id="3-链接"><a href="#3-链接" class="headerlink" title="3. 链接"></a>3. 链接</h3><hr>
-<h3 id="4-字体"><a href="#4-字体" class="headerlink" title="4. 字体"></a>4. 字体</h3><hr>
-<p>在配置文件中打开并设置</p>
-<h3 id="5-动态背景"><a href="#5-动态背景" class="headerlink" title="5. 动态背景"></a>5. 动态背景</h3><hr>
-<p>配置文件中打开</p>
-<h3 id="6-评论"><a href="#6-评论" class="headerlink" title="6. 评论"></a>6. 评论</h3><hr>
-<p>Gitalk设置，并且在GitHub中写自己配置的域名。</p>
+<h2 id="三、下载必要模块"><a href="#三、下载必要模块" class="headerlink" title="三、下载必要模块"></a>三、下载必要模块</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm insatll hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="四、部署hexo"><a href="#四、部署hexo" class="headerlink" title="四、部署hexo"></a>四、部署hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<pre><code> 其中报错出现提示&quot;yaml.safeLoad.....&quot;，要把safeLoad替换成load，根据提示文件去替换即可。
+</code></pre>
+<p>​    因为deploy关联GitHub，会更新远程仓库，可能会报错”<strong>OpenSSL SSL_connect: Connection was reset in connection to github.com:443</strong>“(git pull、git push也有可能有这种情况)，连不上GitHub，可以设置本地代理，因为我本地代理接口是7890，所以输入一下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy 127.0.0.1:7890</span><br><span class="line">git config --global https.proxy 127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<p>​    git可能还会有”Permission denied (publickey). fatal: Could not read from remote repository”的错误，需要本地设置ssh key: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 1.查看本地是否有id_rsa以及文件id_rsa.pub</span><br><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line">// 2.有的话不管了，没有的话继续一下步骤</span><br><span class="line">//   一路回车</span><br><span class="line">ssh-keygen -t rsa -C “youremail@example.com”</span><br><span class="line"></span><br><span class="line">// 3.测试是否连接自己的GitHub</span><br><span class="line">//   出现	No more authentication methods to try.Permission denied (publickey).</span><br><span class="line">ssh -v git@github.com</span><br><span class="line"></span><br><span class="line">// 4.设置agent</span><br><span class="line">//   出现SSH_AUTH_SOCK=/tmp/ssh-GTpABX1a05qH/agent.404; export SSH_AUTH_SOCK;SSH_AGENT_PID=13144; export SSH_AGENT_PID;</span><br><span class="line">ssh-agent -s</span><br><span class="line"></span><br><span class="line">// 5.添加</span><br><span class="line">//   提示Identity added: …</span><br><span class="line">//   若提示　Could not open a connection to your authentication agent.</span><br><span class="line">//   则执行eval ssh-agent -s后再执行一下命令</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">// 6.去远程仓库添加，打开id_rsa.pub，复制后进入GitHub的settings，SSH and GPG keys生成new SSH key，复制到Key，然后add</span><br><span class="line"></span><br><span class="line">// 7.验证</span><br><span class="line">ssh -T git@github.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="五、启动"><a href="#五、启动" class="headerlink" title="五、启动"></a>五、启动</h2><p>​    如下是如何写博客及相关命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 1.在source/_posts下新建博客</span><br><span class="line">hexo new &quot;文章名&quot;</span><br><span class="line"></span><br><span class="line">// 2.去_posts下打开文件，编写tag category，然后写内容</span><br><span class="line">//   用&lt;!--more--&gt;截取摘要</span><br><span class="line"></span><br><span class="line">// 3.本地启动查看,默认4000端口</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line">// 4.部署</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>others</category>
@@ -54,11 +51,9 @@
   <entry>
     <title>Teach Yourself Programming in Ten Years</title>
     <url>/2020/12/28/test/</url>
-    <content><![CDATA[<h2 id="Why-is-everyone-in-such-a-rush"><a href="#Why-is-everyone-in-such-a-rush" class="headerlink" title="Why is everyone in such a rush?"></a>Why is everyone in such a rush?</h2><p>Walk into any bookstore, and you’ll see how to <em>Teach Yourself Java in 7 Days</em> alongside endless variations offering to teach Visual Basic, Windows, the Internet, and so on in a few days or hours. I did the following <a href="http://www.amazon.com/exec/obidos/tg/browse/-/468558/104-5938873-6579160">power search</a> at <a href="http://www.amazon.com/">Amazon.com</a>:</p>
-<span id="more"></span>
+    <content><![CDATA[<h2 id="Why-is-everyone-in-such-a-rush"><a href="#Why-is-everyone-in-such-a-rush" class="headerlink" title="Why is everyone in such a rush?"></a>Why is everyone in such a rush?</h2><span id="more"></span>
 
-
-
+<p>Walk into any bookstore, and you’ll see how to <em>Teach Yourself Java in 7 Days</em> alongside endless variations offering to teach Visual Basic, Windows, the Internet, and so on in a few days or hours. I did the following <a href="http://www.amazon.com/exec/obidos/tg/browse/-/468558/104-5938873-6579160">power search</a> at <a href="http://www.amazon.com/">Amazon.com</a>:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pubdate: after 1992 and title: days and</span><br><span class="line"> (title: learn or title: teach yourself)</span><br></pre></td></tr></table></figure>
 
 <p>and got back 248 hits. The first 78 were computer books (number 79 was <a href="http://www.amazon.com/exec/obidos/ASIN/0781802245/"><em>Learn Bengali in 30 days</em></a>). I replaced “days” with [“hours”](<a href="http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=power%01pubdate%3A">http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=powerpubdate%3A</a> after 1992 and title%3A hours and (title%3A learn or title%3A teach yourself)&amp;sz=25&amp;pg=3/ref=s_b_np) and got remarkably similar results: 253 more books, with 77 computer books followed by <a href="http://www.amazon.com/exec/obidos/ASIN/0028638999/"><em>Teach Yourself Grammar and Style in 24 Hours</em></a> at number 78. Out of the top 200 total, 96% were computer books.</p>
@@ -145,47 +140,46 @@
       </tags>
   </entry>
   <entry>
-    <title>博客迁移到Macbook</title>
-    <url>/2021/12/11/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E5%88%B0Macbook/</url>
-    <content><![CDATA[<h1 id="迁移博客步骤记录"><a href="#迁移博客步骤记录" class="headerlink" title="迁移博客步骤记录"></a>迁移博客步骤记录</h1><p>time: 2021-12-11</p>
-<p>source computer: Windows ThinkPad</p>
-<p>target computer: Macbook pro 16</p>
-<p>​    此文记录我将博客文件迁移到新的MacBook上的步骤。</p>
-<span id="more"></span>
+    <title>关于搭建我的博客</title>
+    <url>/2020/12/29/blogConfig/</url>
+    <content><![CDATA[<h1 id="关于搭建我的博客的经历"><a href="#关于搭建我的博客的经历" class="headerlink" title="关于搭建我的博客的经历"></a>关于搭建我的博客的经历</h1><span id="more"></span>
+
+<p>最近闲来无事，并且刚好看到别人精美的博客，我就想着是时候重新搭建一个博客了。其实我之前已经有过一个同样用GitHub Pages配合Hexo搭建的博客，但因为我感觉不是很美观，再加上域名问题和换了个新电脑，所以又抛弃了。这次重新搭建博客也想着是时候重新开始我的新的编程经历，努力多<del>水</del>写技术文章，记录我的生活。</p>
+<p>一开始我想用Jekyll+Github Pages的方式来搭建，但在这过程中我踩了很多坑，所以放弃了这种方法，重新回到以前搭建博客的方式，就是Hexo(next主题)+Github Pages的方式。</p>
+<h2 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h2><hr>
+<p>既然使用Hexo和Github Pages的方式，那么就需要安装npm，Node.js和hexo了，安装这几者的过程不赘述了，最后可以检测下环境：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm -v        // 我的是6.14.9版本</span><br><span class="line">node -v       // 我的是v14.15.3版本</span><br></pre></td></tr></table></figure>
+
+<p>接着是在Github上申请Github Pages，过程简单，只要创建一个新仓库，名字为“用户名.github.io”，就自动生成成功了，访问URL：用户名.github.io。如果对URL不满意，还可以设置域名，我是在阿里云上购买了新的域名，然后在阿里云控制台设置两个域名的绑定，然后在这个Github仓库的设置里的域名处添加新的域名，这样在Github仓库会生成一个CNAME文件，如果想在本地仓库也设置CNAME文件，在主题里创建一个一样的CNAME文件就行了。</p>
+<p>next主题我没有使用官方的，因为我使用官方的主题会出现乱码的情况，所以我使用了别人优化过的next，具体网址是：<a href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></p>
+<h2 id="二、搭建结构"><a href="#二、搭建结构" class="headerlink" title="二、搭建结构"></a>二、搭建结构</h2><hr>
+<p>在themes文件夹下可以新建一个next文件夹，然后使用git clone命令来下载next主题：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>注意有两个重要的配置文件，一个是在blog根目录下的<strong>站点配置文件</strong>_config.yml，一个是next文件夹下**主题配置文件 ** _config.yml，改动这两个文件的设置就可以改动博客。</p>
+<p>现在在根目录下的cmd命令行，输入命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>没有问题的话就可以在localhost:4000查看使用next主题的博客了。</p>
+<p>接下来我们要添加博客的目录，比如归档archives，目录categories，标签tag和关于about等。在主题配置文件中的menu下一一打开，调整顺序，然后在cmd命令行中这样配置，以目录为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>然后会在source下生成对应文件夹和md文件，在md文件中设置type：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="一、在Mac上安装git、node-js、hexo"><a href="#一、在Mac上安装git、node-js、hexo" class="headerlink" title="一、在Mac上安装git、node.js、hexo"></a>一、在Mac上安装git、node.js、hexo</h2><p>​    下载node: 去<a href="https://nodejs.org/en/]">node.js官网</a>,Current版本为最新版本，LTS为稳定版本</p>
-<p>​    下载hexo: <code>npm i -g hexo</code></p>
-<p>​    最后验证: </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">node -v</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="二、迁移重要文件"><a href="#二、迁移重要文件" class="headerlink" title="二、迁移重要文件"></a>二、迁移重要文件</h2><p>​    去原来电脑配置好的hexo目录copy到新电脑的博客目录下，一下为重要目录:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="三、下载必要模块"><a href="#三、下载必要模块" class="headerlink" title="三、下载必要模块"></a>三、下载必要模块</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm insatll hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="四、部署hexo"><a href="#四、部署hexo" class="headerlink" title="四、部署hexo"></a>四、部署hexo</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<pre><code> 其中报错出现提示&quot;yaml.safeLoad.....&quot;，要把safeLoad替换成load，根据提示文件去替换即可。
-</code></pre>
-<p>​    因为deploy关联GitHub，会更新远程仓库，可能会报错”<strong>OpenSSL SSL_connect: Connection was reset in connection to github.com:443</strong>“(git pull、git push也有可能有这种情况)，连不上GitHub，可以设置本地代理，因为我本地代理接口是7890，所以输入一下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy 127.0.0.1:7890</span><br><span class="line">git config --global https.proxy 127.0.0.1:7890</span><br></pre></td></tr></table></figure>
-
-<p>​    git可能还会有”Permission denied (publickey). fatal: Could not read from remote repository”的错误，需要本地设置ssh key: </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 1.查看本地是否有id_rsa以及文件id_rsa.pub</span><br><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line">// 2.有的话不管了，没有的话继续一下步骤</span><br><span class="line">//   一路回车</span><br><span class="line">ssh-keygen -t rsa -C “youremail@example.com”</span><br><span class="line"></span><br><span class="line">// 3.测试是否连接自己的GitHub</span><br><span class="line">//   出现	No more authentication methods to try.Permission denied (publickey).</span><br><span class="line">ssh -v git@github.com</span><br><span class="line"></span><br><span class="line">// 4.设置agent</span><br><span class="line">//   出现SSH_AUTH_SOCK=/tmp/ssh-GTpABX1a05qH/agent.404; export SSH_AUTH_SOCK;SSH_AGENT_PID=13144; export SSH_AGENT_PID;</span><br><span class="line">ssh-agent -s</span><br><span class="line"></span><br><span class="line">// 5.添加</span><br><span class="line">//   提示Identity added: …</span><br><span class="line">//   若提示　Could not open a connection to your authentication agent.</span><br><span class="line">//   则执行eval ssh-agent -s后再执行一下命令</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">// 6.去远程仓库添加，打开id_rsa.pub，复制后进入GitHub的settings，SSH and GPG keys生成new SSH key，复制到Key，然后add</span><br><span class="line"></span><br><span class="line">// 7.验证</span><br><span class="line">ssh -T git@github.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="五、启动"><a href="#五、启动" class="headerlink" title="五、启动"></a>五、启动</h2><p>​    如下是如何写博客及相关命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 1.在source/_posts下新建博客</span><br><span class="line">hexo new &quot;文章名&quot;</span><br><span class="line"></span><br><span class="line">// 2.去_posts下打开文件，编写tag category，然后写内容</span><br><span class="line">//   用&lt;!--more--&gt;截取摘要</span><br><span class="line"></span><br><span class="line">// 3.本地启动查看,默认4000端口</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line">// 4.部署</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h2 id="三、优化"><a href="#三、优化" class="headerlink" title="三、优化"></a>三、优化</h2><hr>
+<p>关于博客的优化就有很多参考了，下面我就做一些主要优化的说明。</p>
+<h3 id="1-站点logo"><a href="#1-站点logo" class="headerlink" title="1. 站点logo"></a>1. 站点logo</h3><hr>
+<h3 id="2-头像"><a href="#2-头像" class="headerlink" title="2. 头像"></a>2. 头像</h3><hr>
+<h3 id="3-链接"><a href="#3-链接" class="headerlink" title="3. 链接"></a>3. 链接</h3><hr>
+<h3 id="4-字体"><a href="#4-字体" class="headerlink" title="4. 字体"></a>4. 字体</h3><hr>
+<p>在配置文件中打开并设置</p>
+<h3 id="5-动态背景"><a href="#5-动态背景" class="headerlink" title="5. 动态背景"></a>5. 动态背景</h3><hr>
+<p>配置文件中打开</p>
+<h3 id="6-评论"><a href="#6-评论" class="headerlink" title="6. 评论"></a>6. 评论</h3><hr>
+<p>Gitalk设置，并且在GitHub中写自己配置的域名。</p>
 ]]></content>
       <categories>
         <category>others</category>
