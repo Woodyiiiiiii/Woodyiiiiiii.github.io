@@ -6,7 +6,7 @@
   <link href="http://woodyii.com/atom.xml" rel="self"/>
   
   <link href="http://woodyii.com/"/>
-  <updated>2021-12-12T16:41:23.933Z</updated>
+  <updated>2022-01-01T16:51:07.697Z</updated>
   <id>http://woodyii.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL基础复习</title>
+    <link href="http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/"/>
+    <id>http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/</id>
+    <published>2022-01-01T10:17:07.000Z</published>
+    <updated>2022-01-01T16:51:07.697Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL基础复习-一"><a href="#MySQL基础复习-一" class="headerlink" title="MySQL基础复习(一)"></a>MySQL基础复习(一)</h1><span id="more"></span><h2 id="1、一条SQL查询语句的执行"><a href="#1、一条SQL查询语句的执行" class="headerlink" title="1、一条SQL查询语句的执行"></a>1、一条SQL查询语句的执行</h2><p><strong>MySQL的基本架构如下：</strong></p><p><img src="https://static001.geekbang.org/resource/image/0d/d9/0d2070e8f84c4801adbfa03bda1f98d9.png" alt="MySQL的逻辑架构图"></p><p>模块介绍：</p><ol><li><strong>Server层</strong>：<ol><li>连接器：管理连接，权限验证；尽量使用长连接，但全部使用长连接后有时会导致OOM而MySQL重启，解决方法是5.7以上版本执行mysql_reset_connection 来重新初始化连接资源。 </li><li>缓存：每次更新语句都会清空缓存，弊大于利，所以8.0版本以后此缓存功能已删除。</li><li>分析器：分析SQL语句，比如判断select关键字、字段等。</li><li>优化器：分析语句的执行方案，决定使用什么索引等。</li><li>执行器：先检查是否有该表的权限，接着调用引擎接口，一行行扫描是否符合条件，符合则将此行数据存入内存中。</li></ol></li><li><strong>存储引擎</strong>：<ol><li>分InnoDB、MyISM等等，现在默认为InnoDB，因为其支持事务、行锁、外键等等特性。</li></ol></li></ol><h2 id="2、一条SQL更新语句的执行"><a href="#2、一条SQL更新语句的执行" class="headerlink" title="2、一条SQL更新语句的执行"></a>2、一条SQL更新语句的执行</h2><p>三种日志：</p><ol><li><strong>redo log</strong>：InnoDB引擎独有，以物理记录的方式。SQL更新语句会先记录在redo log，然后更新内存，这样这条语句就执行完成了。接着等到引擎空闲的时候才会将操作记录更新到磁盘中。大小固定，循环的方式存储在磁盘上，一组四个文件，每个文件大小4GB，满了后就会先擦去(执行)语句。作用是保证数据库发生异常重启后，之前提交的记录不会丢失(crash-safe)。</li><li><strong>bin log</strong>：Server层中存储，以逻辑记录的方式，并没有内存限制，记录写满后会继续往下一页写。作用是备份数据(归档)，用来恢复数据(从库到主库)，或者扩容，没有crash- safe能力。</li><li><strong>undo log</strong>：MVCC(多版本并发控制)使用此日志，用来记录行数据更新日志，用来事务记录。</li></ol><p><strong>SQL更新语句的执行</strong>，以<code>select * from T where id = 1这</code>条语句为例：</p><ol><li>Server层一路到执行器，接着执行器通过引擎接口找到id=1这一行数据。如果有索引，则用搜索树内部结构找到。如果内存中有，则直接返回，否则先从磁盘中找到数据，刷到内存后，再从内存中取出。</li><li>执行更新语句，写入内存中。</li><li>redo log记录，状态为prepared状态。</li><li>记录到bin log中。</li><li>更新redo log为commit状态。</li></ol><p><img src="https://static001.geekbang.org/resource/image/2e/be/2e5bff4910ec189fe1ee6e2ecc7b4bbe.png" alt="img"></p><p><strong>为什么redo log和bin log要两阶段提交：</strong></p><p>​    尽量保证两者的一致性，分以下三种情况：</p><pre><code>1. prepared阶段成功，写binlog时失败，此时发现没有commit，回滚，两个日志同样逻辑相同。1. commit失败，但满足prepared成功和bin log也有记录，自动commit。</code></pre><p><strong>数据库备份恢复：</strong></p><p>​    DBA一般能够恢复”半个月内”数据库的任何时刻，从而实现数据库恢复。实现方法是通过定时备份数据(从库)和bin log，假如要恢复到昨天12点的状态，找到距离这个时间之前最近的备份数据(比如可能昨天0点)，然后配合bin log(0点到12点的记录)，从而进行恢复。</p><p>推荐资料：<a href="https://www.codenong.com/cs109624300/">链接</a></p><h2 id="3、事务隔离"><a href="#3、事务隔离" class="headerlink" title="3、事务隔离"></a>3、事务隔离</h2><p>什么是事务？</p><p>事务的四大特性：<strong>ACID</strong>(原子性、持续性、隔离性和持久性)。</p><p>事务可能就出现的问题：<strong>脏读、不可重复读、幻读</strong>。后两者其实都一样，只是针对的语句类型不同，不可重复读是针对查询语句，幻读是针对删除插入语句。</p><p>事务的<strong>四种隔离级别</strong>：</p><ol><li>读未提交(read uncommitted)：会出现以上三种问题。</li><li>读提交(read committed)：解决脏读。事务提交，其所做变更才会被其他事务看到。</li><li>可重复读(repeatable read)：进一步解决不可重复读。事务在执行中看的数据与其刚开始启动时的数据一样。MySQL默认隔离级别。</li><li>串行化(serializable)：进一步解决幻读。加读写锁，性能消耗大。</li></ol><p><strong>事务隔离的实现：</strong></p><p>​    undo log记录事务的变更日志。在不需要的时候才删除，系统判断当没有事务再需要用到这些回滚日志时，回滚日志会被删除。</p><p><strong>tips：</strong></p><p>​    长事务指的是一个流程过长的事务。尽量不要使用长事务。长事务意味着系统里面会存在很老的事务视图，而且这个事务提交之前，其回滚记录都必须保留，这就会导致大量占用存储空间。另外，长事务也会占用锁资源。</p><p><strong>事务的启动方式：</strong></p><pre><code>1. 显式启动事务语句， begin 、start transaction、commit、rollback。1. set autocommit=0。</code></pre><p>推荐资料：<a href="https://cloud.tencent.com/developer/article/1450773">链接</a></p><h2 id="4、索引"><a href="#4、索引" class="headerlink" title="4、索引"></a>4、索引</h2><p>索引的内部结构有哈希表、有序数组和多叉搜索树的形式。</p><p>InnoDB为了减少磁盘IO次数，使用的是**N叉搜索树(B+树)**的形式。</p><p><strong>索引的分类：</strong></p><p>​    主键索引、唯一索引、联合索引和普通索引。</p><p>​    主键索引：非叶子结点存储的是主键，叶子结点存储的是页(数据的存储单位，具体的说是行数据)。</p><p>​    普通索引：非叶子结点存储的是索引条件，叶子结点存储的是主键，然后会去主键索引树进行回表查询。</p><p>​    尽量使用主键索引，并且主键字段不要太长，这样占用空间较小。</p><p><strong>覆盖索引：</strong><br>    不需要回表查询的二级(普通)索引。应用条件是普通索引树已经有我们需要的字段了，比如select后的字段已经在普通索引树上。</p><p><strong>最左前缀原则：</strong><br>    B+树可以利用索引的“最左前缀”，来定位记录。索引项是按照索引定义里面出现的字段顺序排序的。比如当已经有了 (a,b) 这个联合索引后，一般就不需要单独在 a 上建立索引了，这样就少维护了一个索引，即索引的复用。</p><p><strong>(索引失效)</strong></p><p><strong>索引下推：</strong></p><p>​    在联合索引中，可以在索引遍历过程中，对索引中包含的字段先做判断，直接过滤掉不满足条件的记录，减少回表次数。</p><p>​    </p><h2 id="5、全局锁和表锁"><a href="#5、全局锁和表锁" class="headerlink" title="5、全局锁和表锁"></a>5、全局锁和表锁</h2><p><strong>全局锁：</strong></p><p>​    对整个数据库实例加锁，命令是 Flush tables with read lock (FTWRL)，使得整个数据库变成只读状态，其他增删改、定义语句被阻塞。一般用作全库备份时的操作，避免数据库不一致。</p><p>​    </p><p><strong>表级锁：</strong></p><p>​    分为表锁和元数据锁（meta data lock，MDL)。</p><p>​    <strong>表锁：</strong>分读锁、写锁。写是排他锁，写锁意味着其他线程不能读也不能写。读锁是共享锁，加上后其他锁只能读不能写，本线程也不能写。InnoDB一般使用行锁，表锁影响较大。</p><p>​    <strong>MDL：</strong>不需要显式使用，在访问一个表的时候会被自动加上。同样是读写锁。系统默认添加。所有对表的增删改查操作都需要先申请 MDL 读锁。该锁直到事务提交才释放。</p><p>​    给表加字段时会扫描全表，会使用MDL锁，可能会造成阻塞，即出现命令队列中一个语句占用锁时间过长，导致后面的语句被block，这个时候客户端如果有频繁重试的逻辑就会导致不停的和数据库建立连接，把连接池打满导致库不可用，使得数据库崩溃。</p><p><strong>如何安全地给小表加字段：</strong></p><p>​    在 alter table 语句里面设定等待时间，过时则重试。</p><h2 id="6、行锁"><a href="#6、行锁" class="headerlink" title="6、行锁"></a>6、行锁</h2><p>行锁是在引擎层由各个引擎自己实现的，InnoDB 是支持行锁。</p><p>行锁都是在 commit 的时候才释放的，即<strong>两阶段锁</strong>协议。</p><p>所以如果事务中需要锁多个行，要把最可能造成锁冲突、最可能影响并发度的锁尽量往后放。</p><p><strong>死锁和死锁检测：</strong></p><p>出现条件：循环资源依赖。</p><p>解决策略：</p><ol><li>进入等待，直到超时</li><li>死锁检测，发现死锁后主动回滚死锁链条中的某一个事务(正常情况下使用该策略)</li></ol><p>死锁检测有弊端：检测时会扫描其他占用资源的所有线程。比如100个线程同时更新一行，那么会扫描100*100次，消耗大量的 CPU 资源，事务执行少。</p><p>限制死锁：只能尽量控制，一是客户端进行并发控制，但仍可能会出现，比如几个客户端各自限制同时最多三个线程，但汇总到数据库服务端仍会有大量线程；二是改中间件或者MySQL源码(?)；三是考虑通过将一行改成逻辑上的多行来减少锁冲突，使得命中同一行的可能性降低了。</p><h2 id="7、扩展：2pc和3pc"><a href="#7、扩展：2pc和3pc" class="headerlink" title="7、扩展：2pc和3pc"></a>7、扩展：2pc和3pc</h2><p>2pc(两阶段提交)，3pc(三阶段提交)。</p><p>推荐资料：<a href="https://www.cnblogs.com/wudimanong/p/10340948.html">链接</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;MySQL基础复习-一&quot;&gt;&lt;a href=&quot;#MySQL基础复习-一&quot; class=&quot;headerlink&quot; title=&quot;MySQL基础复习(一)&quot;&gt;&lt;/a&gt;MySQL基础复习(一)&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="DataBase" scheme="http://woodyii.com/categories/DataBase/"/>
+    
+    
+    <category term="MySQL" scheme="http://woodyii.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>博客迁移到Macbook</title>
