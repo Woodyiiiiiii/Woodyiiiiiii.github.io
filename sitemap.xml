@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/</loc>
+    <loc>http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0(%E4%B8%80)/</loc>
     
-    <lastmod>2022-01-01</lastmod>
+    <lastmod>2022-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -67,7 +67,7 @@
 
   <url>
     <loc>http://woodyii.com/</loc>
-    <lastmod>2022-01-01</lastmod>
+    <lastmod>2022-01-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,14 +75,14 @@
   
   <url>
     <loc>http://woodyii.com/tags/MySQL/</loc>
-    <lastmod>2022-01-01</lastmod>
+    <lastmod>2022-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://woodyii.com/tags/others/</loc>
-    <lastmod>2022-01-01</lastmod>
+    <lastmod>2022-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -91,14 +91,14 @@
   
   <url>
     <loc>http://woodyii.com/categories/DataBase/</loc>
-    <lastmod>2022-01-01</lastmod>
+    <lastmod>2022-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://woodyii.com/categories/others/</loc>
-    <lastmod>2022-01-01</lastmod>
+    <lastmod>2022-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

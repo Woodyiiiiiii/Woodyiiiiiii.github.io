@@ -26,21 +26,23 @@
 <meta name="description" content="MySQL基础复习(一)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL基础复习">
-<meta property="og:url" content="http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:url" content="http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0(%E4%B8%80)/index.html">
 <meta property="og:site_name" content="伍迪的树">
 <meta property="og:description" content="MySQL基础复习(一)">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://static001.geekbang.org/resource/image/0d/d9/0d2070e8f84c4801adbfa03bda1f98d9.png">
 <meta property="og:image" content="https://static001.geekbang.org/resource/image/2e/be/2e5bff4910ec189fe1ee6e2ecc7b4bbe.png">
+<meta property="og:image" content="http://woodyii.com/Users/woodyiiiiii/Documents/MVCC%E4%BA%8B%E5%8A%A1%E4%B8%BE%E4%BE%8B%E5%9B%BE.png">
+<meta property="og:image" content="https://static001.geekbang.org/resource/image/88/5e/882114aaf55861832b4270d44507695e.png">
 <meta property="article:published_time" content="2022-01-01T10:17:07.000Z">
-<meta property="article:modified_time" content="2022-01-01T16:51:07.697Z">
+<meta property="article:modified_time" content="2022-01-02T08:44:17.220Z">
 <meta property="article:author" content="Woodyiiiiiii">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://static001.geekbang.org/resource/image/0d/d9/0d2070e8f84c4801adbfa03bda1f98d9.png">
 
 
-<link rel="canonical" href="http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/">
+<link rel="canonical" href="http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0(%E4%B8%80)/">
 
 
 <script class="page-configurations">
@@ -195,7 +197,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">MySQL基础复习(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%B8%80%E6%9D%A1SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">1、一条SQL查询语句的执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%B8%80%E6%9D%A1SQL%E6%9B%B4%E6%96%B0%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="nav-number">1.2.</span> <span class="nav-text">2、一条SQL更新语句的执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB"><span class="nav-number">1.3.</span> <span class="nav-text">3、事务隔离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E7%B4%A2%E5%BC%95"><span class="nav-number">1.4.</span> <span class="nav-text">4、索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E5%85%A8%E5%B1%80%E9%94%81%E5%92%8C%E8%A1%A8%E9%94%81"><span class="nav-number">1.5.</span> <span class="nav-text">5、全局锁和表锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E8%A1%8C%E9%94%81"><span class="nav-number">1.6.</span> <span class="nav-text">6、行锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E6%89%A9%E5%B1%95%EF%BC%9A2pc%E5%92%8C3pc"><span class="nav-number">1.7.</span> <span class="nav-text">7、扩展：2pc和3pc</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0-%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">MySQL基础复习(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%B8%80%E6%9D%A1SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">1、一条SQL查询语句的执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E4%B8%80%E6%9D%A1SQL%E6%9B%B4%E6%96%B0%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="nav-number">1.2.</span> <span class="nav-text">2、一条SQL更新语句的执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB"><span class="nav-number">1.3.</span> <span class="nav-text">3、事务隔离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E7%B4%A2%E5%BC%95"><span class="nav-number">1.4.</span> <span class="nav-text">4、索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E5%85%A8%E5%B1%80%E9%94%81%E5%92%8C%E8%A1%A8%E9%94%81"><span class="nav-number">1.5.</span> <span class="nav-text">5、全局锁和表锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E8%A1%8C%E9%94%81"><span class="nav-number">1.6.</span> <span class="nav-text">6、行锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81MVCC%E3%80%81%E8%A1%8C%E9%94%81%E3%80%81%E5%BF%AB%E7%85%A7"><span class="nav-number">1.7.</span> <span class="nav-text">7、MVCC、行锁、快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81%E6%89%A9%E5%B1%95%EF%BC%9A2pc%E5%92%8C3pc"><span class="nav-number">1.8.</span> <span class="nav-text">8、扩展：2pc和3pc</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -271,7 +273,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="http://woodyii.com/2022/01/01/MySQL%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0(%E4%B8%80)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -302,7 +304,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-02 00:51:07" itemprop="dateModified" datetime="2022-01-02T00:51:07+08:00">2022-01-02</time>
+        <time title="Modified: 2022-01-02 16:44:17" itemprop="dateModified" datetime="2022-01-02T16:44:17+08:00">2022-01-02</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -422,7 +424,24 @@
 </ol>
 <p>死锁检测有弊端：检测时会扫描其他占用资源的所有线程。比如100个线程同时更新一行，那么会扫描100*100次，消耗大量的 CPU 资源，事务执行少。</p>
 <p>限制死锁：只能尽量控制，一是客户端进行并发控制，但仍可能会出现，比如几个客户端各自限制同时最多三个线程，但汇总到数据库服务端仍会有大量线程；二是改中间件或者MySQL源码(?)；三是考虑通过将一行改成逻辑上的多行来减少锁冲突，使得命中同一行的可能性降低了。</p>
-<h2 id="7、扩展：2pc和3pc"><a href="#7、扩展：2pc和3pc" class="headerlink" title="7、扩展：2pc和3pc"></a>7、扩展：2pc和3pc</h2><p>2pc(两阶段提交)，3pc(三阶段提交)。</p>
+<h2 id="7、MVCC、行锁、快照"><a href="#7、MVCC、行锁、快照" class="headerlink" title="7、MVCC、行锁、快照"></a>7、MVCC、行锁、快照</h2><p><img src="/Users/woodyiiiiii/Documents/MVCC%E4%BA%8B%E5%8A%A1%E4%B8%BE%E4%BE%8B%E5%9B%BE.png" alt="MVCC事务举例图"></p>
+<p>​    以上图的事务场景举例，我们假设事务C的update语句本身就是一个事务，语句完成的时候会自动提交。然后事务B更新后查询，事务A在这之后，只读。</p>
+<p>​    结论是事务B查的k的值是3，事务A查的k的值是1。</p>
+<p><strong>视图：</strong></p>
+<p>​    我们说的视图目前有两种概念，一种是view，虚拟表；另一种是事务开启时生成的一致性视图，InnoDB使用MVCC创建而成，即 consistent read view，用于支持 RC（读提交）和 RR（可重复读）隔离级别的实现。</p>
+<p><strong>快照：</strong></p>
+<p>​    之前说的MVCC会为每个事务生成快照，这个快照肯定不是真正的表数据，不然太大了，那它到底是什么呢？</p>
+<p>​    首先每行数据可能当下都位于多个事务中，那么每个事务启动时(可能在begin/start transaction时启动，也可能在执行语句时启动，PR前者，RC后者)都会被InnoDB事务系统生成一个唯一的transaction ID(按申请顺序严格递增)，且每次事务更新数据的时候，都会生成一个新的数据版本，并且把 transaction id 赋值给这个数据版本的事务 ID，记为 row trx_id，所以说每行数据此时此刻可能有多个row trx_id。</p>
+<p>​    根据这个ID，MVCC结合undo log，能够”溯源”，找到以前提交的版本，从而实现”快照”，或者说”视图”的概念。</p>
+<p>​    每个事务开启时，都会有对应的视图数组，表示的是它通过MVCC找到的、它自己承认的、已提交事务的row trx_id集合，即快照。</p>
+<p><img src="https://static001.geekbang.org/resource/image/88/5e/882114aaf55861832b4270d44507695e.png" alt="img"></p>
+<p>​    每个事务读取的数据，绿色的表示之前已提交的事务，红色部分表示的是将来要启动的事务，黄色部分表示一些是在它视图数组里的已提交的事务，另一部分表示不在它视图数组里的未提交的事务。事务能看到的只是绿色和黄色中已提交部分的。</p>
+<p>​    回到之前的事务举例，显然对于隔离级别PR，事务A启动时已生成快照，根据一致性读，查出的k还未改变，所以当然是1。</p>
+<p>​    此外对于事务B，因为其是更新语句，因为要保证其他事务的更新对他有影响，所以有这条规则：更新数据都是先读后写的，并且只能读当前的值，称为“当前读”（current read）。读的是当前事务的数据，所以一开始读的时候k就为2了。除了 update 语句外，select 语句如果加锁，也是当前读。</p>
+<p>​    假设事务C的commit在事务B的更新语句之后，会因为行锁的原因，事务B必须等待事务C的commit。事务 B 是当前读，必须要读最新版本，而且必须加锁。</p>
+<p>​    **可重复读的核心就是一致性读(consistent read)**；而事务更新数据的时候，只能用当前读。如果当前的记录的行锁被其他事务占用的话，就需要进入锁等待。</p>
+<p>​    读提交与PR的区别是，每一个语句执行前会重新算出一个新的视图。这样按照例子，事务A读的是k的值是2，事务B是3。</p>
+<h2 id="8、扩展：2pc和3pc"><a href="#8、扩展：2pc和3pc" class="headerlink" title="8、扩展：2pc和3pc"></a>8、扩展：2pc和3pc</h2><p>2pc(两阶段提交)，3pc(三阶段提交)。</p>
 <p>推荐资料：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wudimanong/p/10340948.html">链接</a></p>
 
     </div>
@@ -531,7 +550,7 @@ NexT.utils.loadComments('.gitalk-container', () => {
       repo        : 'MyBlogComments',
       owner       : 'Woodyiiiiiii',
       admin       : ['Woodyiiiiiii'],
-      id          : 'cc5fd76e91d17fc4f92f9a2184a00b36',
+      id          : '8b4b3d10d33bfd347c01c15672b91bad',
         language: 'zh-CN',
       distractionFreeMode: true
     });
