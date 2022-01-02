@@ -129,6 +129,97 @@
       </tags>
   </entry>
   <entry>
+    <title>Teach Yourself Programming in Ten Years</title>
+    <url>/2020/12/28/test/</url>
+    <content><![CDATA[<h2 id="Why-is-everyone-in-such-a-rush"><a href="#Why-is-everyone-in-such-a-rush" class="headerlink" title="Why is everyone in such a rush?"></a>Why is everyone in such a rush?</h2><span id="more"></span>
+
+<p>Walk into any bookstore, and you’ll see how to <em>Teach Yourself Java in 7 Days</em> alongside endless variations offering to teach Visual Basic, Windows, the Internet, and so on in a few days or hours. I did the following <a href="http://www.amazon.com/exec/obidos/tg/browse/-/468558/104-5938873-6579160">power search</a> at <a href="http://www.amazon.com/">Amazon.com</a>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pubdate: after 1992 and title: days and</span><br><span class="line"> (title: learn or title: teach yourself)</span><br></pre></td></tr></table></figure>
+
+<p>and got back 248 hits. The first 78 were computer books (number 79 was <a href="http://www.amazon.com/exec/obidos/ASIN/0781802245/"><em>Learn Bengali in 30 days</em></a>). I replaced “days” with [“hours”](<a href="http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=power%01pubdate%3A">http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=powerpubdate%3A</a> after 1992 and title%3A hours and (title%3A learn or title%3A teach yourself)&amp;sz=25&amp;pg=3/ref=s_b_np) and got remarkably similar results: 253 more books, with 77 computer books followed by <a href="http://www.amazon.com/exec/obidos/ASIN/0028638999/"><em>Teach Yourself Grammar and Style in 24 Hours</em></a> at number 78. Out of the top 200 total, 96% were computer books.</p>
+<p>The conclusion is that either people are in a big rush to learn about computers, or that computers are somehow fabulously easier to learn than anything else. There are no books on how to learn Beethoven, or Quantum Physics, or even Dog Grooming in a few days.</p>
+<p>Let’s analyze what a title like <em><a href="http://www.amazon.com/exec/obidos/ISBN=1556225679/4094-7934802-027992">Learn Pascal in Three Days</a></em> could mean:</p>
+<ul>
+<li><p>Learn:</p>
+<p>In 3 days you won’t have time to write several significant programs, and learn from your successes and failures with them. You won’t have time to work with an experienced programmer and understand what it is like to live in that environment. In short, you won’t have time to learn much. So they can only be talking about a superficial familiarity, not a deep understanding. As Alexander Pope said, a little learning is a dangerous thing.</p>
+</li>
+<li><p>Pascal:</p>
+<p>In 3 days you might be able to learn the syntax of Pascal (if you already knew a similar language), but you couldn’t learn much about how to use the syntax. In short, if you were, say, a Basic programmer, you could learn to write programs in the style of Basic using Pascal syntax, but you couldn’t learn what Pascal is actually good (and bad) for. So what’s the point?</p>
+<p>Alan Perlis</p>
+<p>once said: “A language that doesn’t affect the way you think about programming, is not worth knowing”. One possible point is that you have to learn a tiny bit of Pascal (or more likely, something like Visual Basic or JavaScript) because you need to interface with an existing tool to accomplish a specific task. But then you’re not learning how to program; you’re learning to accomplish that task.</p>
+</li>
+<li><p><strong>in Three Days:</strong> Unfortunately, this is not enough, as the next section shows.</p>
+</li>
+</ul>
+<h2 id="Teach-Yourself-Programming-in-Ten-Years"><a href="#Teach-Yourself-Programming-in-Ten-Years" class="headerlink" title="Teach Yourself Programming in Ten Years"></a>Teach Yourself Programming in Ten Years</h2><p>Researchers (<a href="http://www.amazon.com/exec/obidos/ASIN/0805803092">Hayes</a>, <a href="http://www.amazon.com/exec/obidos/ASIN/034531509X/">Bloom</a>) have shown it takes about ten years to develop expertise in any of a wide variety of areas, including chess playing, music composition, painting, piano playing, swimming, tennis, and research in neuropsychology and topology. There appear to be no real shortcuts: even Mozart, who was a musical prodigy at age 4, took 13 more years before he began to produce world-class music. In another genre, the Beatles seemed to burst onto the scene with a string of #1 hits and an appearance on the Ed Sullivan show in 1964. But they had been playing small clubs in Liverpool and Hamburg since 1957, and while they had mass appeal early on, their first great critical success, <em>Sgt. Peppers</em>, was released in 1967. Samuel Johnson thought it took longer than ten years: “Excellence in any department can be attained only by the labor of a lifetime; it is not to be purchased at a lesser price.” And Chaucer complained “the lyf so short, the craft so long to lerne.”</p>
+<p>Here’s my recipe for programming success:</p>
+<ul>
+<li><p>Get interested in programming, and do some because it is fun. Make sure that it keeps being enough fun so that you will be willing to put in ten years.</p>
+</li>
+<li><p>Talk to other programmers; read other programs. This is more important than any book or training course.</p>
+</li>
+<li><p>Program. The best kind of learning is</p>
+<p>learning by doing</p>
+<p>. To put it more technically, “the maximal level of performance for individuals in a given domain is not attained automatically as a function of extended experience, but the level of performance can be increased even by highly experienced individuals as a result of deliberate efforts to improve.”</p>
+<p>(p. 366)</p>
+<p>and “the most effective learning requires a well-defined task with an appropriate difficulty level for the particular individual, informative feedback, and opportunities for repetition and corrections of errors.” (p. 20-21) The book</p>
+<p><a href="http://www.amazon.com/exec/obidos/ASIN/0521357349">Cognition in Practice: Mind, Mathematics, and Culture in Everyday Life</a></p>
+<p>is an interesting reference for this viewpoint.</p>
+</li>
+<li><p>If you want, put in four years at a college (or more at a graduate school). This will give you access to some jobs that require credentials, and it will give you a deeper understanding of the field, but if you don’t enjoy school, you can (with some dedication) get similar experience on the job. In any case, book learning alone won’t be enough. “Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter” says Eric Raymond, author of</p>
+<p>The New Hacker’s Dictionary</p>
+<p>. One of the best programmers I ever hired had only a High School degree; he’s produced a lot of</p>
+<p>great</p>
+<p>software</p>
+<p>, has his own</p>
+<p>news group</p>
+<p>, and through stock options is no doubt much richer than I’ll ever be.</p>
+</li>
+<li><p>Work on projects with other programmers. Be the best programmer on some projects; be the worst on some others. When you’re the best, you get to test your abilities to lead a project, and to inspire others with your vision. When you’re the worst, you learn what the masters do, and you learn what they don’t like to do (because they make you do it for them).</p>
+</li>
+<li><p>Work on projects</p>
+<p>after</p>
+<p>other programmers. Be involved in understanding a program written by someone else. See what it takes to understand and fix it when the original programmers are not around. Think about how to design your programs to make it easier for those who will maintain it after you.</p>
+</li>
+<li><p>Learn at least a half dozen programming languages. Include one language that supports class abstractions (like Java or C++), one that supports functional abstraction (like Lisp or ML), one that supports syntactic abstraction (like Lisp), one that supports declarative specifications (like Prolog or C++ templates), one that supports coroutines (like Icon or Scheme), and one that supports parallelism (like Sisal).</p>
+</li>
+<li><p>Remember that there is a “computer” in “computer science”. Know how long it takes your computer to execute an instruction, fetch a word from memory (with and without a cache miss), read consecutive words from disk, and seek to a new location on disk. (</p>
+<p>Answers here.</p>
+<p>)</p>
+</li>
+<li><p>Get involved in a language standardization effort. It could be the ANSI C++ committee, or it could be deciding if your local coding style will have 2 or 4 space indentation levels. Either way, you learn about what other people like in a language, how deeply they feel so, and perhaps even a little about why they feel so.</p>
+</li>
+<li><p>Have the good sense to get off the language standardization effort as quickly as possible.</p>
+</li>
+</ul>
+<p>With all that in mind, its questionable how far you can get just by book learning. Before my first child was born, I read all the <em>How To</em> books, and still felt like a clueless novice. 30 Months later, when my second child was due, did I go back to the books for a refresher? No. Instead, I relied on my personal experience, which turned out to be far more useful and reassuring to me than the thousands of pages written by experts.</p>
+<p>Fred Brooks, in his essay <em><a href="http://citeseer.nj.nec.com/context/7718/0">No Silver Bullets</a></em> identified a three-part plan for finding great software designers:</p>
+<ol>
+<li><p>Systematically identify top designers as early as possible.</p>
+</li>
+<li><p>Assign a career mentor to be responsible for the development of the prospect and carefully keep a career file.</p>
+</li>
+<li><p>Provide opportunities for growing designers to interact and stimulate each other.</p>
+</li>
+</ol>
+<p>This assumes that some people already have the qualities necessary for being a great designer; the job is to properly coax them along. <a href="http://www-pu.informatik.uni-tuebingen.de/users/klaeren/epigrams.html">Alan Perlis</a> put it more succinctly: “Everyone can be taught to sculpt: Michelangelo would have had to be taught how not to. So it is with the great programmers”.</p>
+<p>So go ahead and buy that Java book; you’ll probably get some use out of it. But you won’t change your life, or your real overall expertise as a programmer in 24 hours, days, or even months.</p>
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>Bloom, Benjamin (ed.) <em><a href="http://www.amazon.com/exec/obidos/ASIN/034531509X">Developing Talent in Young People</a></em>, Ballantine, 1985.</p>
+<p>Brooks, Fred, <em><a href="http://citeseer.nj.nec.com/context/7718/0">No Silver Bullets</a></em>, IEEE Computer, vol. 20, no. 4, 1987, p. 10-19.</p>
+<p>Hayes, John R., <em><a href="http://www.amazon.com/exec/obidos/ASIN/0805803092">Complete Problem Solver</a></em> Lawrence Erlbaum, 1989.</p>
+<p>Lave, Jean, <em><a href="http://www.amazon.com/exec/obidos/ASIN/0521357349">Cognition in Practice: Mind, Mathematics, and Culture in Everyday Life</a></em>, Cambridge University Press, 1988.</p>
+<hr>
+<p><a href="https://arantius.com/misc/mirror/index.html"><em>Peter Norvig</em> (Copyright 2001)</a></p>
+]]></content>
+      <categories>
+        <category>others</category>
+      </categories>
+      <tags>
+        <tag>others</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于搭建我的博客</title>
     <url>/2020/12/29/blogConfig/</url>
     <content><![CDATA[<h1 id="关于搭建我的博客的经历"><a href="#关于搭建我的博客的经历" class="headerlink" title="关于搭建我的博客的经历"></a>关于搭建我的博客的经历</h1><span id="more"></span>
@@ -217,97 +308,6 @@
 <h2 id="五、启动"><a href="#五、启动" class="headerlink" title="五、启动"></a>五、启动</h2><p>​    如下是如何写博客及相关命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 1.在source/_posts下新建博客</span><br><span class="line">hexo new &quot;文章名&quot;</span><br><span class="line"></span><br><span class="line">// 2.去_posts下打开文件，编写tag category，然后写内容</span><br><span class="line">//   用&lt;!--more--&gt;截取摘要</span><br><span class="line"></span><br><span class="line">// 3.本地启动查看,默认4000端口</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line">// 4.部署</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>others</category>
-      </categories>
-      <tags>
-        <tag>others</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Teach Yourself Programming in Ten Years</title>
-    <url>/2020/12/28/test/</url>
-    <content><![CDATA[<h2 id="Why-is-everyone-in-such-a-rush"><a href="#Why-is-everyone-in-such-a-rush" class="headerlink" title="Why is everyone in such a rush?"></a>Why is everyone in such a rush?</h2><span id="more"></span>
-
-<p>Walk into any bookstore, and you’ll see how to <em>Teach Yourself Java in 7 Days</em> alongside endless variations offering to teach Visual Basic, Windows, the Internet, and so on in a few days or hours. I did the following <a href="http://www.amazon.com/exec/obidos/tg/browse/-/468558/104-5938873-6579160">power search</a> at <a href="http://www.amazon.com/">Amazon.com</a>:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pubdate: after 1992 and title: days and</span><br><span class="line"> (title: learn or title: teach yourself)</span><br></pre></td></tr></table></figure>
-
-<p>and got back 248 hits. The first 78 were computer books (number 79 was <a href="http://www.amazon.com/exec/obidos/ASIN/0781802245/"><em>Learn Bengali in 30 days</em></a>). I replaced “days” with [“hours”](<a href="http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=power%01pubdate%3A">http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=powerpubdate%3A</a> after 1992 and title%3A hours and (title%3A learn or title%3A teach yourself)&amp;sz=25&amp;pg=3/ref=s_b_np) and got remarkably similar results: 253 more books, with 77 computer books followed by <a href="http://www.amazon.com/exec/obidos/ASIN/0028638999/"><em>Teach Yourself Grammar and Style in 24 Hours</em></a> at number 78. Out of the top 200 total, 96% were computer books.</p>
-<p>The conclusion is that either people are in a big rush to learn about computers, or that computers are somehow fabulously easier to learn than anything else. There are no books on how to learn Beethoven, or Quantum Physics, or even Dog Grooming in a few days.</p>
-<p>Let’s analyze what a title like <em><a href="http://www.amazon.com/exec/obidos/ISBN=1556225679/4094-7934802-027992">Learn Pascal in Three Days</a></em> could mean:</p>
-<ul>
-<li><p>Learn:</p>
-<p>In 3 days you won’t have time to write several significant programs, and learn from your successes and failures with them. You won’t have time to work with an experienced programmer and understand what it is like to live in that environment. In short, you won’t have time to learn much. So they can only be talking about a superficial familiarity, not a deep understanding. As Alexander Pope said, a little learning is a dangerous thing.</p>
-</li>
-<li><p>Pascal:</p>
-<p>In 3 days you might be able to learn the syntax of Pascal (if you already knew a similar language), but you couldn’t learn much about how to use the syntax. In short, if you were, say, a Basic programmer, you could learn to write programs in the style of Basic using Pascal syntax, but you couldn’t learn what Pascal is actually good (and bad) for. So what’s the point?</p>
-<p>Alan Perlis</p>
-<p>once said: “A language that doesn’t affect the way you think about programming, is not worth knowing”. One possible point is that you have to learn a tiny bit of Pascal (or more likely, something like Visual Basic or JavaScript) because you need to interface with an existing tool to accomplish a specific task. But then you’re not learning how to program; you’re learning to accomplish that task.</p>
-</li>
-<li><p><strong>in Three Days:</strong> Unfortunately, this is not enough, as the next section shows.</p>
-</li>
-</ul>
-<h2 id="Teach-Yourself-Programming-in-Ten-Years"><a href="#Teach-Yourself-Programming-in-Ten-Years" class="headerlink" title="Teach Yourself Programming in Ten Years"></a>Teach Yourself Programming in Ten Years</h2><p>Researchers (<a href="http://www.amazon.com/exec/obidos/ASIN/0805803092">Hayes</a>, <a href="http://www.amazon.com/exec/obidos/ASIN/034531509X/">Bloom</a>) have shown it takes about ten years to develop expertise in any of a wide variety of areas, including chess playing, music composition, painting, piano playing, swimming, tennis, and research in neuropsychology and topology. There appear to be no real shortcuts: even Mozart, who was a musical prodigy at age 4, took 13 more years before he began to produce world-class music. In another genre, the Beatles seemed to burst onto the scene with a string of #1 hits and an appearance on the Ed Sullivan show in 1964. But they had been playing small clubs in Liverpool and Hamburg since 1957, and while they had mass appeal early on, their first great critical success, <em>Sgt. Peppers</em>, was released in 1967. Samuel Johnson thought it took longer than ten years: “Excellence in any department can be attained only by the labor of a lifetime; it is not to be purchased at a lesser price.” And Chaucer complained “the lyf so short, the craft so long to lerne.”</p>
-<p>Here’s my recipe for programming success:</p>
-<ul>
-<li><p>Get interested in programming, and do some because it is fun. Make sure that it keeps being enough fun so that you will be willing to put in ten years.</p>
-</li>
-<li><p>Talk to other programmers; read other programs. This is more important than any book or training course.</p>
-</li>
-<li><p>Program. The best kind of learning is</p>
-<p>learning by doing</p>
-<p>. To put it more technically, “the maximal level of performance for individuals in a given domain is not attained automatically as a function of extended experience, but the level of performance can be increased even by highly experienced individuals as a result of deliberate efforts to improve.”</p>
-<p>(p. 366)</p>
-<p>and “the most effective learning requires a well-defined task with an appropriate difficulty level for the particular individual, informative feedback, and opportunities for repetition and corrections of errors.” (p. 20-21) The book</p>
-<p><a href="http://www.amazon.com/exec/obidos/ASIN/0521357349">Cognition in Practice: Mind, Mathematics, and Culture in Everyday Life</a></p>
-<p>is an interesting reference for this viewpoint.</p>
-</li>
-<li><p>If you want, put in four years at a college (or more at a graduate school). This will give you access to some jobs that require credentials, and it will give you a deeper understanding of the field, but if you don’t enjoy school, you can (with some dedication) get similar experience on the job. In any case, book learning alone won’t be enough. “Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter” says Eric Raymond, author of</p>
-<p>The New Hacker’s Dictionary</p>
-<p>. One of the best programmers I ever hired had only a High School degree; he’s produced a lot of</p>
-<p>great</p>
-<p>software</p>
-<p>, has his own</p>
-<p>news group</p>
-<p>, and through stock options is no doubt much richer than I’ll ever be.</p>
-</li>
-<li><p>Work on projects with other programmers. Be the best programmer on some projects; be the worst on some others. When you’re the best, you get to test your abilities to lead a project, and to inspire others with your vision. When you’re the worst, you learn what the masters do, and you learn what they don’t like to do (because they make you do it for them).</p>
-</li>
-<li><p>Work on projects</p>
-<p>after</p>
-<p>other programmers. Be involved in understanding a program written by someone else. See what it takes to understand and fix it when the original programmers are not around. Think about how to design your programs to make it easier for those who will maintain it after you.</p>
-</li>
-<li><p>Learn at least a half dozen programming languages. Include one language that supports class abstractions (like Java or C++), one that supports functional abstraction (like Lisp or ML), one that supports syntactic abstraction (like Lisp), one that supports declarative specifications (like Prolog or C++ templates), one that supports coroutines (like Icon or Scheme), and one that supports parallelism (like Sisal).</p>
-</li>
-<li><p>Remember that there is a “computer” in “computer science”. Know how long it takes your computer to execute an instruction, fetch a word from memory (with and without a cache miss), read consecutive words from disk, and seek to a new location on disk. (</p>
-<p>Answers here.</p>
-<p>)</p>
-</li>
-<li><p>Get involved in a language standardization effort. It could be the ANSI C++ committee, or it could be deciding if your local coding style will have 2 or 4 space indentation levels. Either way, you learn about what other people like in a language, how deeply they feel so, and perhaps even a little about why they feel so.</p>
-</li>
-<li><p>Have the good sense to get off the language standardization effort as quickly as possible.</p>
-</li>
-</ul>
-<p>With all that in mind, its questionable how far you can get just by book learning. Before my first child was born, I read all the <em>How To</em> books, and still felt like a clueless novice. 30 Months later, when my second child was due, did I go back to the books for a refresher? No. Instead, I relied on my personal experience, which turned out to be far more useful and reassuring to me than the thousands of pages written by experts.</p>
-<p>Fred Brooks, in his essay <em><a href="http://citeseer.nj.nec.com/context/7718/0">No Silver Bullets</a></em> identified a three-part plan for finding great software designers:</p>
-<ol>
-<li><p>Systematically identify top designers as early as possible.</p>
-</li>
-<li><p>Assign a career mentor to be responsible for the development of the prospect and carefully keep a career file.</p>
-</li>
-<li><p>Provide opportunities for growing designers to interact and stimulate each other.</p>
-</li>
-</ol>
-<p>This assumes that some people already have the qualities necessary for being a great designer; the job is to properly coax them along. <a href="http://www-pu.informatik.uni-tuebingen.de/users/klaeren/epigrams.html">Alan Perlis</a> put it more succinctly: “Everyone can be taught to sculpt: Michelangelo would have had to be taught how not to. So it is with the great programmers”.</p>
-<p>So go ahead and buy that Java book; you’ll probably get some use out of it. But you won’t change your life, or your real overall expertise as a programmer in 24 hours, days, or even months.</p>
-<hr>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>Bloom, Benjamin (ed.) <em><a href="http://www.amazon.com/exec/obidos/ASIN/034531509X">Developing Talent in Young People</a></em>, Ballantine, 1985.</p>
-<p>Brooks, Fred, <em><a href="http://citeseer.nj.nec.com/context/7718/0">No Silver Bullets</a></em>, IEEE Computer, vol. 20, no. 4, 1987, p. 10-19.</p>
-<p>Hayes, John R., <em><a href="http://www.amazon.com/exec/obidos/ASIN/0805803092">Complete Problem Solver</a></em> Lawrence Erlbaum, 1989.</p>
-<p>Lave, Jean, <em><a href="http://www.amazon.com/exec/obidos/ASIN/0521357349">Cognition in Practice: Mind, Mathematics, and Culture in Everyday Life</a></em>, Cambridge University Press, 1988.</p>
-<hr>
-<p><a href="https://arantius.com/misc/mirror/index.html"><em>Peter Norvig</em> (Copyright 2001)</a></p>
 ]]></content>
       <categories>
         <category>others</category>
