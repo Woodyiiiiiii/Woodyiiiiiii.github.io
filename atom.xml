@@ -6,7 +6,7 @@
   <link href="http://woodyii.com/atom.xml" rel="self"/>
   
   <link href="http://woodyii.com/"/>
-  <updated>2022-01-03T04:26:08.850Z</updated>
+  <updated>2022-01-16T11:02:33.386Z</updated>
   <id>http://woodyii.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>分布式锁</title>
+    <link href="http://woodyii.com/2022/01/16/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/"/>
+    <id>http://woodyii.com/2022/01/16/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81/</id>
+    <published>2022-01-16T10:59:27.000Z</published>
+    <updated>2022-01-16T11:02:33.386Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h1><span id="more"></span><h2 id="1、分布式系统简介"><a href="#1、分布式系统简介" class="headerlink" title="1、分布式系统简介"></a>1、分布式系统简介</h2><h2 id="2、分布式锁"><a href="#2、分布式锁" class="headerlink" title="2、分布式锁"></a>2、分布式锁</h2>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;分布式锁&quot;&gt;&lt;a href=&quot;#分布式锁&quot; class=&quot;headerlink&quot; title=&quot;分布式锁&quot;&gt;&lt;/a&gt;分布式锁&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="Distributed" scheme="http://woodyii.com/categories/Distributed/"/>
+    
+    
+    <category term="Distributed" scheme="http://woodyii.com/tags/Distributed/"/>
+    
+  </entry>
   
   <entry>
     <title>2021年终总结</title>
