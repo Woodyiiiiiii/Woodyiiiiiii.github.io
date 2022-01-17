@@ -31,7 +31,7 @@
 <meta property="og:description" content="分布式锁">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-16T10:59:27.000Z">
-<meta property="article:modified_time" content="2022-01-16T11:02:33.386Z">
+<meta property="article:modified_time" content="2022-01-17T14:41:53.101Z">
 <meta property="article:author" content="Woodyiiiiiii">
 <meta property="article:tag" content="Distributed">
 <meta name="twitter:card" content="summary">
@@ -291,10 +291,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-01-16 18:59:27 / Modified: 19:02:33" itemprop="dateCreated datePublished" datetime="2022-01-16T18:59:27+08:00">2022-01-16</time>
+      <time title="Created: 2022-01-16 18:59:27" itemprop="dateCreated datePublished" datetime="2022-01-16T18:59:27+08:00">2022-01-16</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-01-17 22:41:53" itemprop="dateModified" datetime="2022-01-17T22:41:53+08:00">2022-01-17</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -319,7 +325,49 @@
 
 
 
-<h2 id="1、分布式系统简介"><a href="#1、分布式系统简介" class="headerlink" title="1、分布式系统简介"></a>1、分布式系统简介</h2><h2 id="2、分布式锁"><a href="#2、分布式锁" class="headerlink" title="2、分布式锁"></a>2、分布式锁</h2>
+<h2 id="1、分布式系统简介"><a href="#1、分布式系统简介" class="headerlink" title="1、分布式系统简介"></a>1、分布式系统简介</h2><p>为了规范分布式系统中各个系统的统一，CAP理论应运而生，维基百科原文如下：</p>
+<p>In <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Theoretical_computer_science">theoretical computer science</a>, the <strong>CAP theorem</strong>, also named <strong>Brewer’s theorem</strong> after computer scientist <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Eric_Brewer_(scientist)">Eric Brewer</a>, states that any <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Distributed_data_store">distributed data store</a> can only provide <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Trilemma">two of the following three</a> guarantees:[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CAP_theorem#cite_note-Gilbert_Lynch-1">1]</a>[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CAP_theorem#cite_note-2">2]</a>[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CAP_theorem#cite_note-3">3]</a></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Consistency_model">Consistency</a></p>
+<p>Every read receives the most recent write or an error.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Availability">Availability</a></p>
+<p>Every request receives a (non-error) response, without the guarantee that it contains the most recent write.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Network_partitioning">Partition tolerance</a></p>
+<p>The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.</p>
+</li>
+</ul>
+<p>When a network partition failure happens, it must be decided whether to</p>
+<ul>
+<li>cancel the operation and thus decrease the availability but ensure consistency or to</li>
+<li>proceed with the operation and thus provide availability but risk inconsistency.</li>
+</ul>
+<p>Thus, if there is a network partition, one has to choose between consistency and availability. Note that consistency as defined in the CAP theorem is quite different from the consistency guaranteed in <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/ACID">ACID</a> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Database_transaction">database transactions</a>.[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CAP_theorem#cite_note-4">4]</a></p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Eric_Brewer_(scientist)">Eric Brewer</a> argues that the often-used “two out of three” concept can be somewhat misleading because system designers only need to sacrifice consistency or availability in the presence of partitions, but that in many systems partitions are rare.</p>
+<p>解释如下：</p>
+<ol>
+<li>一致性：</li>
+<li>可用性：</li>
+<li>分区</li>
+</ol>
+<h2 id="2、分布式锁"><a href="#2、分布式锁" class="headerlink" title="2、分布式锁"></a>2、分布式锁</h2><p>常见的分布式锁如下：</p>
+<ol>
+<li>数据库锁：乐观锁和悲观锁</li>
+<li>zookeeper锁</li>
+<li>redis锁<ol>
+<li>redis+lua</li>
+<li>redlock</li>
+<li>redisson</li>
+</ol>
+</li>
+</ol>
+<p><strong>引用资料：</strong></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CAP_theorem">维基百科</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1860632#:~:text=CAP%20%E7%90%86%E8%AE%BA%EF%BC%8C%E7%9B%B8%E4%BF%A1%E5%BE%88%E5%A4%9A%E4%BA%BA,%E9%A1%B9%E4%B8%AD%E7%9A%84%E4%B8%A4%E9%A1%B9%E3%80%82&text=%E5%A6%82%E6%9E%9C%E6%98%AF%E5%9C%A8%E8%81%8C%E5%9C%BA%E4%B8%8A%E4%BE%9D%E6%8D%AECAP%20%E5%8E%BB%E5%90%A6%E5%86%B3%E5%AE%83%E3%80%82">一文看懂｜分布式系统之CAP理论</a></li>
+</ol>
+
     </div>
 
     
